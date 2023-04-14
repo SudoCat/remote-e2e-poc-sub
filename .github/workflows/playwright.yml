@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     if: ${{ github.event.deployment_status.state == 'success' }}
-    uses: SudoCat/remote-e2e-poc-main/.github/workflows/action.yml
+    uses: SudoCat/remote-e2e-poc-main/.github/workflows/action.yml@main
     with:
       SUB_APP_URL: ${{ github.event.deployment_status.target_url }}
       MAIN_APP_URL: ${{ vars.MAIN_APP_URL }}
