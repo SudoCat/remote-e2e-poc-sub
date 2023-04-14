@@ -1,16 +1,15 @@
 {
-  "name": "remote-e2e-poc-sub",
-  "version": "0.0.0",
-  "private": true,
+  "name": "square-satellite",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "astro": "^2.3.0"
   }
 }
