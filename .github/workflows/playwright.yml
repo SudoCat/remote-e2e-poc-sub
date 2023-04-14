@@ -1,11 +1,6 @@
 name: Playwright Auto
 
-on:
-  deployment_status:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: deployment_status
 
 jobs:
   test:
