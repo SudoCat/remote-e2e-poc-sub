@@ -9,18 +9,8 @@ on:
 
 jobs:
   test:
-   if: ${{ github.event.deployment_status.state == 'success' }}
-   runs-on: ubuntu-latest
-   defaults:
-     run:
-       working-directory: ./remote-e2e-poc-main
-   steps:
-     - uses: actions/checkout@v1
-       with:
-         repository: SudoCat/remote-e2e-poc-main
-         path: 'remote-e2e-poc-main'
-         ref: 'main'
-     - uses: ./.github/actions/tests
-       with:
-         SUB_APP_URL: ${{ vars.SUB_APP_URL }}
-         MAIN_APP_URL: ${{ github.event.deployment_status.target_url }}
+    if: ${{ github.event.deployment_status.state == 'success' }}
+    uses: SudoCat/remote-e2e-poc-main/.github/workflows/action.yml
+    with:
+      SUB_APP_URL: ${{ github.event.deployment_status.target_url }}
+      MAIN_APP_URL: ${{ vars.MAIN_APP_URL }}
